@@ -206,7 +206,7 @@ function createDatabase(databasePath) {
         try { sess = JSON.parse(row.sess); } catch { sess = {}; }
         if (queueExpiredRoleRemoval(row.discord_id, sess, config)) removalsQueued += 1;
       }
-      const sessionsRemoved = statements.pruneExpired.run(now).changes;
+      const sessionsRemoved = store.prune();
       return { sessionsRemoved, removalsQueued };
     },
     pendingCount() { return statements.pendingCount.get().count; },
