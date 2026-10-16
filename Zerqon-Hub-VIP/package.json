@@ -1,0 +1,23 @@
+{
+  "name": "zerqon-hub-vip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zerqon Hub VIP — Discord OAuth2 verification and role-management portal",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config.js && node --check src/db.js && node --check src/discord.js && node --check src/security.js && node --check public/app.js"
+  },
+  "engines": { "node": ">=20.11.0" },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0"
+  }
+}
